@@ -15,7 +15,6 @@ export class PadreComponent {
   }
 
 
-
 //contador
   valorContador : number = 0;
   

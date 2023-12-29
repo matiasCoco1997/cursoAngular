@@ -2,14 +2,11 @@
 
 <p>{{ valorContador }}</p>
 
-
-
 <app-hijo
  [recibeHijo] = "mensajePadre" 
  (mensajeDesdeHijo) = "recibirMensaje($event)"
  (incrementarDesdeHijo) = "incrementar()"
  (decrementarDesdeHijo) = "decrementar()">
-
 </app-hijo>
 
-<h5>El mensaje recibido desde el hijo es: {{ mensajeRecibido }}</h5>
+<h5>El mensaje recibido desde la clase hijo fue: {{ mensajeRecibido }}</h5>
