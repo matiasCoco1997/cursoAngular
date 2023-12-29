@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class PadreComponent {
 
+  valorContador : number = 0;
+
+  incrementar(){
+    this.valorContador++;
+  }
+
+  decrementar(){
+    this.valorContador--;
+  }
+
 }
