@@ -1,5 +1,5 @@
 {
-  "name": "1-curso-angular-youtube",
+  "name": "curso-angular-youtube",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:1_curso-angular-youtube": "node dist/1_curso-angular-youtube/server/server.mjs"
+    "serve:ssr:curso-angular-youtube": "node dist/curso-angular-youtube/server/server.mjs"
   },
   "private": true,
   "dependencies": {
