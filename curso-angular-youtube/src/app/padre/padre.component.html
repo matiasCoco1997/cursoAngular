@@ -1,5 +1,4 @@
-<!--
-    <h1>Contador</h1>
+<h1>Contador</h1>
 
 <p>{{ valorContador }}</p>
 
@@ -11,10 +10,25 @@
 </app-hijo>
 
 <h5>El mensaje recibido desde la clase hijo fue: {{ mensajeRecibido }}</h5>
--->
+
+<hr>
 
 <div>
     <h1 appEstiloHermanos>{{ nombre }}</h1>
+    <button type="button" (click)="saludar()">Saludar</button>
+    <button type="button" (click)="preguntar()">Preguntar por Hijo</button>
+</div>
+
+
+<hr>
+
+<div style="background-color: rgba(0, 128, 0, 0.493);">
+    CON PIPES
+    <h1>{{ nombre | miPipePersonalizado}}</h1><!-- el pipe personalizado convierte en mayusculas el texto -->
+    <h2>Fecha de hoy: {{ fecha | date : 'short' }}  /// Fecha de hoy en otro formato: {{ fecha | date : 'dd/MM/yyyy' }}</h2><!-- el pipe propio de angular modifica la fecha con el formato deseado -->
+    <h2>Cuanto cotiza el dolar: {{ dolar | currency }}</h2><!-- el pipe propio de angular me trae el signo de la moneda deseado -->
+    <h2>El número PI: {{ pi | number: '1.2-2' }}</h2> <!-- el pipe propio de angular me trae dos decimales -->
+    <h2>El porcentake es: {{ factor | percent }}</h2> <!-- el pipe propio de angular me convierte a porcentaje el valor -->
     <button type="button" (click)="saludar()">Saludar</button>
     <button type="button" (click)="preguntar()">Preguntar por Hijo</button>
 </div>
