@@ -5,7 +5,17 @@
   "projects": {
     "landing-page-angular": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -101,6 +111,6 @@
     }
   },
   "cli": {
-    "analytics": "63a06853-a190-43f2-ab9a-7f8d47584112"
+    "analytics": false
   }
 }
