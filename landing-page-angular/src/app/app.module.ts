@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     HomeComponent,
     ContactComponent,
     ProductsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, //formularios de tipo plantilla
+    ReactiveFormsModule //formularios reactivos
   ],
   providers: [
     provideClientHydration()
