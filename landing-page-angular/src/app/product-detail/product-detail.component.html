@@ -1,20 +1,28 @@
 
-<ng-container *ngIf="!loading">
-    <div class="card bg-dark text-light border-0 col-6 m-auto">
-        <h5 class="card-header bg-primary">Producto: {{ product?.name }}</h5>
-        <div class="card-body">
-          <h5 [ngStyle]="{ 'color' : color }" class="card-title">Precio: {{ product?.price | currency}}</h5>
-          <p *ngIf="product?.description"class="card-text">Descripción: {{ product?.description }}</p>
-          <a href="#" class="btn btn-primary">Comprar</a>
-        </div>
-    </div>
-</ng-container>
+<div class="center mt-4">
+    <ng-container *ngIf="!loading">
 
-<ng-container *ngIf="loading">
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="spinner-border text-secondary m-auto" role="status">
-            <span class="visually-hidden">Loading...</span>
+        <div class="card" style="max-width: 25rem;">
+            <img src="{{ product?.image }}" class="card-img-top" alt="{{ product?.title }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ product?.title | uppercase}}</h5>
+              <h5 class="card-title">{{ product?.category }}</h5>
+              <h6 [ngStyle]="{ 'color' : color }" class="card-title">Precio: {{ product?.price | currency}}</h6>
+              <p class="card-text">{{ product?.description }}</p>
+              <a href="#" class="btn btn-primary">Comprar</a>
+            </div>
         </div>
-    </div>
-</ng-container>
+
+    </ng-container>
+    
+    <ng-container *ngIf="loading">
+        <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div class="spinner-border text-secondary m-auto" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+
 

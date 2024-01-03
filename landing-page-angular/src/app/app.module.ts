@@ -9,6 +9,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DniComponent } from './contact/dni/dni.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { DniComponent } from './contact/dni/dni.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule, //formularios de tipo plantilla
-    ReactiveFormsModule //formularios reactivos
+    ReactiveFormsModule, //formularios reactivos
+    HttpClientModule //para hacer peticiones http
   ],
   providers: [
     provideClientHydration()

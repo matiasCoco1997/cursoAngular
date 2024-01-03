@@ -1,26 +1,37 @@
+<div class="container">
+  <h1>Productos de limpieza:</h1>
 
-<h1>Productos de limpieza:</h1>
-
-<table class="table">
-
+  <table class="table container">
     <thead>
-      <tr>
+      <tr class="p-2">
         <th scope="col">#</th>
         <th scope="col">Producto</th>
+        <th scope="col">Categoría</th>
         <th scope="col">Precio</th>
         <th scope="col">Detalle</th>
       </tr>
     </thead>
 
     <tbody>
-
       <tr *ngFor="let product of productsList">
         <th scope="row">{{ product.id }}</th>
-        <td>{{ product.name }}</td>
-        <td [ngClass]="{'red': product.price > 5}">{{ product.price | currency }}</td>
-        <button type="button" class="btn btn-outline-primary" [routerLink]="['/products', product.id ]">Ver detalle</button>
+
+        <td>{{ product.title }}</td>
+
+        <td>{{ product.category }}</td>
+
+        <td [ngClass]="{ red: product.price > 150 }">
+          {{ product.price | currency }}
+        </td>
+
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          [routerLink]="['/products', product.id]"
+        >
+          Ver detalle
+        </button>
       </tr>
-
     </tbody>
-
   </table>
+</div>
