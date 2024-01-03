@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,23 +7,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './contact.component.css'
 })
 
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
 
   formularioContacto: FormGroup;
-  tipoDni: string = "Dni";
-
-
-  usuarioActivo: any = {
-    nombre: "Matías",
-    apellido: "Coco",
-    dni: "11222333444"
-  };
+  tipoDni: string = "";
+  mostrarDni: boolean = false;
 
   constructor ( private form : FormBuilder ){
     this.formularioContacto = this.form.group ({
       nombre: ['', [Validators. required, Validators.minLength(3)]],
       apellido: [''],
-      dni: [''],
       tipoDni: [''],
       email: ['', [Validators.required, Validators.email]]
     })
@@ -31,8 +24,13 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.formularioContacto.get('tipoDni')?.valueChanges.subscribe( value => {
+      this.mostrarDni = value != "";
       this.tipoDni = value;
     });
+  }
+
+  ngOnDestroy(): void {
+    
   }
 
   enviar(){ 

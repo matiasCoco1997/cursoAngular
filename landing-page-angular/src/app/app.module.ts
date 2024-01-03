@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DniComponent } from './contact/dni/dni.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContactComponent,
     ProductsComponent,
     ProductDetailComponent,
+    DniComponent,
   ],
   imports: [
     BrowserModule,
